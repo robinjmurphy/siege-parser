@@ -6,6 +6,11 @@ const assert = require('assert');
 describe('siege-parser', () => {
   it('parses the output from the siege command', () => {
     const output = `
+      ** SIEGE 3.1.0
+      ** Preparing 1 concurrent users for battle.
+      The server is now under siege...
+      Lifting the server siege..      done.
+      
       Transactions:		          10 hits
       Availability:		      100.00 %
       Elapsed time:		        4.41 secs
