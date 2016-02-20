@@ -1,5 +1,7 @@
 'use strict';
 
+const summaryLinePattern = /^([A-z ]+):\s+([\d\.]+)/;
+
 function toCamelCase(str) {
   return str
     .replace(/\s(.)/g, (match) => match.toUpperCase())
@@ -9,17 +11,16 @@ function toCamelCase(str) {
 
 module.exports = function parse(output) {
   const lines = output.split('\n');
-  const parsed = {};
 
-  lines.forEach((line) => {
-    if (/:\s+/.test(line)) {
-      const matches = line.trim().match(/^([A-z ]+):\s+([\d\.]+)/);
+  return lines.reduce((parsed, line) => {
+    if (summaryLinePattern.test(line)) {
+      const matches = line.trim().match(summaryLinePattern);
       const key = toCamelCase(matches[1]);
       const value = matches[2];
 
       parsed[key] = parseFloat(value);
     }
-  });
 
-  return parsed;
+    return parsed;
+  }, {});
 };
