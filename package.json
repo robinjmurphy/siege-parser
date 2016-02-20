@@ -1,0 +1,37 @@
+{
+  "name": "siege-parser",
+  "version": "1.0.0",
+  "description": "Parses the output from the Siege load testing tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint .",
+    "posttest": "npm run lint"
+  },
+  "bin": {
+    "siege-parser": "./bin/siege-parser.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinjmurphy/siege-parser.git"
+  },
+  "keywords": [
+    "siege",
+    "parser",
+    "load",
+    "test"
+  ],
+  "author": "robin@robinmurphy.co.uk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinjmurphy/siege-parser/issues"
+  },
+  "homepage": "https://github.com/robinjmurphy/siege-parser#readme",
+  "devDependencies": {
+    "eslint": "^2.2.0",
+    "mocha": "^2.4.5"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
