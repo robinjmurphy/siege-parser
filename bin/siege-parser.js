@@ -10,7 +10,7 @@ const stdin = process.stdin;
 let output = '';
 
 stdin.on('data', (data) => {
-  output = output += data.toString();
+  output += data.toString();
 });
 
 stdin.on('end', () => {
